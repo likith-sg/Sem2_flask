@@ -19,7 +19,8 @@ def enter_details():
         age = request.form.get('age')
         email = request.form.get('email')
         phone = request.form.get('phone')
-        if not all([name, age, email, phone]):
+        description = request.form.get('description')
+        if not all([name, age, email, phone,description]):
             flash("Please fill in all fields.", "error")
             return redirect(url_for('enter_details'))
         return redirect(url_for('select_car'))
